@@ -11,6 +11,9 @@
     };
 };
 
-&chosen {
-    zmk,display = &nice_view;
+/ {
+    chosen {
+        zmk,display = &nice_view;
+    };
 };
+

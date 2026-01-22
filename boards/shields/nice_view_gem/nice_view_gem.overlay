@@ -1,16 +1,16 @@
-/* Attach nice!view to the SPI bus already defined by Corne */
+&spi1 {
+    /* DO NOT touch status or pinctrl */
 
-&spi_display {
     nice_view: nice_view@0 {
         compatible = "zmk,nice-view";
         reg = <0>;
         spi-max-frequency = <8000000>;
 
-        /* PandaKB Corne v3 wiring */
+        /* PandaKB Corne v3 – tested wiring */
         dc-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
         cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
 
-        /* No reset pin on Corne */
+        /* No reset pin */
     };
 };
 

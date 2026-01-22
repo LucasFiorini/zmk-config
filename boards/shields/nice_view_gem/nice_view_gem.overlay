@@ -7,8 +7,9 @@
         spi-max-frequency = <8000000>;
 
         /* PandaKB Corne v3 – tested wiring */
-        dc-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
-        cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
+        dc-gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
+        cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+
 
         /* No reset pin */
     };
@@ -19,3 +20,4 @@
         zmk,display = &nice_view;
     };
 };
+

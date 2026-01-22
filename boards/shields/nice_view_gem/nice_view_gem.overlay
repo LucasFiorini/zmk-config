@@ -1,23 +1,21 @@
+/* Attach nice!view to the SPI bus already defined by Corne */
 
-// PandaKB Corne V3 nice!view overlay
-&spi0 {
-    status = "okay";
-
+&spi_display {
     nice_view: nice_view@0 {
         compatible = "zmk,nice-view";
         reg = <0>;
         spi-max-frequency = <8000000>;
 
-        /* These are the pins PandaKB Corne V3 uses for nice!view */
-        cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
+        /* PandaKB Corne v3 wiring */
         dc-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+        cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
 
-        /* No reset pin on this board */
+        /* No reset pin on Corne */
     };
 };
 
- / {
-     chosen {
-         zmk,display = &nice_view;
-     };
- };
+/ {
+    chosen {
+        zmk,display = &nice_view;
+    };
+};

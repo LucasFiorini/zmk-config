@@ -1,6 +1,6 @@
 / {
     chosen {
-        zmk,display = &display0;
+        zmk,display = &nice_view;
     };
 };
 

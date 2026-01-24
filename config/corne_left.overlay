@@ -4,6 +4,6 @@
     };
 };
 
-&display0 {
+&nice_view {
     flip = <0>;
 };

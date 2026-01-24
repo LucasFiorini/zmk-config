@@ -4,6 +4,6 @@
     };
 };
 
-&nice_view_spi {
+&nice_view {
     cs-gpios = <&pro_micro 6 GPIO_ACTIVE_HIGH>;
 };

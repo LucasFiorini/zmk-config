@@ -1,9 +1,10 @@
 / {
     chosen {
-        zmk,display = &nice_view;
+        zmk,display = &sharp_display;
     };
 };
 
-&nice_view {
-    flip = <0>;
+&sharp_display {
+    flip = <0>;  // or <1> to test orientation
+    status = "okay";
 };

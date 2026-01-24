@@ -1,0 +1,9 @@
+/ {
+    chosen {
+        zmk,display = &display0;
+    };
+};
+
+&display0 {
+    flip = <1>;
+};

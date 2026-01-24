@@ -1,9 +1,0 @@
-/ {
-    /*
-     * Tell ZMK which display node to use.
-     * The actual display node is provided by the board-specific overlay.
-     */
-    chosen {
-        zmk,display = &nice_view;
-    };
-};

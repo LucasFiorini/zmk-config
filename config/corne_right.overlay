@@ -2,22 +2,7 @@
     status = "disabled";
 };
 
-// Override I2C pinctrl to use unused pins to avoid conflicts
 &pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 31)>;
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 31)>;
-            low-power-enable;
-        };
-    };
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
@@ -33,7 +18,8 @@
                     <NRF_PSEL(SPIM_MISO, 0, 17)>;
             low-power-enable;
         };
-    };};
+    };
+};
 
 &spi0 {
     status = "okay";

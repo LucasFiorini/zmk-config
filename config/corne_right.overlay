@@ -1,10 +1,6 @@
-// Delete the OLED node that Corne defines for I2C
-/delete-node/ &oled;
-
-// Disable I2C completely
+// Disable I2C - we're using SPI instead
 &i2c0 {
     status = "disabled";
-    /delete-property/ compatible;
 };
 
 &pinctrl {

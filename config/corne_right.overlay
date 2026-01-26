@@ -1,3 +1,8 @@
+// Disable I2C - we're using SPI instead
+&i2c0 {
+    status = "disabled";
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -25,7 +30,6 @@
 
     ls0xx: ls0xx@0 {
         compatible = "sharp,ls0xx";
-        label = "DISPLAY";
         spi-max-frequency = <2000000>;
         reg = <0>;
         width = <160>;

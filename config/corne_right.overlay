@@ -1,10 +1,40 @@
-/ {
-    chosen {
-        zmk,display = &sharp_display;
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>;
+            low-power-enable;
+        };
     };
 };
 
-&sharp_display {
-    flip = <0>;  // or <1> to test orientation
+&spi0 {
     status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+
+    ls0xx: ls0xx@0 {
+        compatible = "sharp,ls0xx";
+        label = "DISPLAY";
+        spi-max-frequency = <2000000>;
+        reg = <0>;
+        width = <160>;
+        height = <68>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &ls0xx;
+    };
 };

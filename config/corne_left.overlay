@@ -2,18 +2,6 @@
     status = "disabled";
 };
 
-&twi0 {
-    status = "disabled";
-};
-
-&twim0 {
-    status = "disabled";
-};
-
-&twis0 {
-    status = "disabled";
-};
-
 // Override I2C pinctrl to use unused pins to avoid conflicts
 &pinctrl {
     i2c0_default: i2c0_default {

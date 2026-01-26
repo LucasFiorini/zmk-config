@@ -1,9 +1,8 @@
 &i2c0 {
     status = "disabled";
     /delete-property/ compatible;
+    /delete-node/ ssd1306@3c;
 };
-
-/delete-node/ &ssd1306;
 
 &pinctrl {
     spi0_default: spi0_default {

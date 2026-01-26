@@ -35,7 +35,7 @@
     cs-gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
 
     ls0xx: ls0xx@0 {
-        compatible = "sharp,ls011b7dh03";
+        compatible = "sharp,ls0xx";
         spi-max-frequency = <2000000>;
         reg = <0>;
         width = <160>;

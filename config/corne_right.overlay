@@ -3,6 +3,8 @@
     /delete-property/ compatible;
 };
 
+/delete-node/ &ssd1306;
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {

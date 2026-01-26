@@ -1,5 +1,6 @@
 &i2c0 {
     status = "disabled";
+    /delete-property/ compatible;
 };
 
 &pinctrl {

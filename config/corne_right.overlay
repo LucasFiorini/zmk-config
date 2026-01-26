@@ -1,7 +1,10 @@
 &i2c0 {
     status = "disabled";
     /delete-property/ compatible;
-    /delete-node/ ssd1306@3c;
+
+    ssd1306@3c {
+        status = "disabled";
+    };
 };
 
 &pinctrl {
